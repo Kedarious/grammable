@@ -25,5 +25,6 @@ RSpec.describe GramsController, type: :controller do
 
     	gram = Gram.last
     	expect(gram.message).to eq("Hello!")
-  end
+    	end
+  	end
 end
