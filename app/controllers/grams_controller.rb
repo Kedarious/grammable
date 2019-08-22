@@ -2,10 +2,10 @@ class GramsController < ApplicationController
 	before_action :authenticate_user!, only: [:new, :create]
 
 	def update
-		@gram = Gram.find_by_id(parmas[:id])
+		@gram = Gram.find_by_id(params[:id])
 		return render_not_found if @gram.blank?
 
-		@grams.update_attributes(gram_params)
+		@gram.update_attributes(gram_params)
 
 		if @gram.valid?
 			redirect_to root_path
@@ -14,7 +14,6 @@ class GramsController < ApplicationController
 		end		
 	end	
 		
-	end
 
 	def new
 		@gram = Gram.new

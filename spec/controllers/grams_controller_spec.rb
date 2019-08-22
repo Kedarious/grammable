@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe GramsController, type: :controller do
-	
+
 	describe "grams#update action" do
 		it "shoud allow users to successfully update gram" do
 			gram = FactoryBot.create(:gram, message: "Initial Value")
@@ -13,7 +13,7 @@ RSpec.describe GramsController, type: :controller do
 
 		it "should have http 404 error if the gram cannot be found" do
 			patch :update, params: { id: "YOLOSWAG", gram: {message: 'Changed'} }
-			expect(response).to have have_http_status(:not_found)
+			expect(response).to have_http_status(:not_found)
 		end
 
 		it "should render the edit form with an http status of unprocessable_entity" do
